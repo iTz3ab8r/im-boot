@@ -6,14 +6,6 @@ client.on('ready', () => {
   console.log(' Bot Is Online')
   console.log('---------------')
 });
-client.on('message', message => {
-     if (message.content === ".servers") {
-     let embed = new Discord.RichEmbed()
-  .setColor("#0000FF")
-  .addField("**Server: **" , client.guilds.size)
-  message.channel.sendEmbed(embed);
-    }
-
 
 client.on('message', message => {
   if (!message.content.startsWith(prefix)) return;
