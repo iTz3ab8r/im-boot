@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 client.on('ready', () => {
-  client.user.setGame(`$help ll $inv`,'https://www.twitch.tv/idk');
+  client.user.setGame(`EL JOKER™ §€RVÊR 👑 `,'https://www.twitch.tv/idk');
   console.log('---------------');
   console.log(' Bot Is Online')
   console.log('---------------')
@@ -13,44 +13,6 @@ client.on('message', message => {
   .addField("**Server: **" , client.guilds.size)
   message.channel.sendEmbed(embed);
     }
-
-client.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('Pong!');
-  }
-});
-if (message.content === '$help') {
-              var embed  = new Discord.RichEmbed()
-                .addField("**LINKS**" ,":no_entry_sign: تم اضافه منع الروابط :no_entry_sign: ")
-                .addField("**broadcast (bc)**" ,"**الاستخدام:** ``$broadcast <الرساله> , $bc <الرساله>``")
-                .addField("**Muted**" ,"**الاستخدام:** ``$Muted <لاعضاء ميوت للشخص>``")
-                .addField("**unmute**" ,"**الاستخدام:** ``$unmute <لفك ميوت عن شخص> ``")
-                .addField("**ِAVATAR**" ,"**الاستخدام:** ``$avatar``")
-                .addField("**ِserver**" ,"**الاستخدام:** ``$server <لمعرفت معلومات سيرفر>``")
-                .addField("**ِcchat**" ,"**الاستخدام:** ``$cchat <لقفل شات بروم>``")
-                .addField("**ِunchat**" ,"**الاستخدام:** ``$unchat <لفتح شات بروم>``")
-                .addField("**SAY**" ,"**الاستخدام:** ``$say <الرساله>``")
-                .addField("**kick**" ,"**الاستخدام:** ``$kick <لطرد شخص>``")
-                .addField("**Ban**" ,"**الاستخدام:** ``$ban <لتبنيد شخص> ``")
-                .addField("**Bans**" ,"**الاستخدام:** ``$bans <لمعرفت عدد المتبندين> ``")
-                .addField("**ID**" ,"**الاستخدام:** ``$id``")
-                .addField("**INVITE**" ,"**الاستخدام:** ``$inv <لأضافه البوت لأى سيرفر>``")
-                .addField("**ccolors**" ,"**الاستخدام:** ``$ccolors <لانشاء 200 لون>``")
-                .addField("**send**" ,"**الاستخدام:** ``$send <لعمل تصويت منشن للروم>``")
-                .addField("**SUPPORT**" ,"**الاستخدام:** ``$support <سيرفر دعم الفنى>``")
-                .addField("**WARNS**" ,"**الاستخدام:** ``$warns < warnsاصنع روم باسم>``")
-                .addField("**Report**" ,"**الاستخدام:** ``$Report < Reportاصنع روم باسم>``")
-                .addField("**CLEAR**" ,"**الاستخدام:** ``$clear <العدد>``")
-                .addField("**PING**", "**الأستخدام:** ``$ping``")
-                .addField("**user**","**الأستخدام:** ``$user يصنع لك روم بعدد اعضاء سيرفر``")
-                .addField("**Welcome**","**الأستخدام:** ``لتفعيل انشاء روم باسم welcome``")
-                .addField("**NO INVITE LINKE**","تم اضافة خاصية منع الانفيتات ")
-                .addField("**FALAGS**",":wink: اكتب اسم اي دولة يطلعلك علامة:wink:")
-                .setColor('RANDOM')
-.setColor('RANDOM')
-  message.author.sendEmbed(embed);
-    }
-});
 
 
 client.on('message', message => {
@@ -144,29 +106,7 @@ client.on('message', message => {
     }
 });
 
-client.on('message' , message => {
- 
-    if (message.content === "$inv") {
-        message.reply(`تم ارساله الرابط في الخاص`)
-        if(!message.channel.guild) return message.reply('**الآمر فقط في السيرفرات**');
-     const embed = new Discord.RichEmbed()
- .setColor("RANDOM")
- .setThumbnail(client.user.avatarURL)    
- .setDescription("دعوة اضافة البوت" + `
- **
-رابط البوت |
-https://discordapp.com/api/oauth2/authorize?client_id=522572942807400449&permissions=0&scope=bot
- **
-`);
-  message.author.sendEmbed(embed);
-   }
-});
 
-client.on('message', msg => {
-  if (msg.content === '$help') {
-    msg.reply(':envelope: | تم ارسال الرساله في الخاص');
-  }
-});
 
 // Your Avatar URL!
 client.on('message', message => {
@@ -174,11 +114,7 @@ client.on('message', message => {
     message.reply(message.author.avatarURL); 
     }
 });
-client.on('message', msg => {
-  if (msg.content === '$suppport') {
-    msg.reply('السيرفر للمساعده,https://discord.gg/HDGKJx');
-  }
-});
+
 client.on("message", message => {
       if (message.content === "$ping") {
       const embed = new Discord.RichEmbed()
@@ -334,96 +270,6 @@ client.on('message', msg => {
 });
 
 
- client.on('message', msg => {
-  if (msg.content === 'السعودية') {      
-    msg.react("????")
-    msg.channel.send("????")
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'مصر') {      
-    msg.react("????")
-    msg.channel.send("????")
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'المغرب') {      
-    msg.react("????")
-    msg.channel.send("????")
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'العراق') {      
-    msg.react("????")
-    msg.channel.send("????")
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'الجزائر') {      
-    msg.react("????")
-    msg.channel.send("????")
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'الامارات') {      
-    msg.react("????")
-    msg.channel.send("????")
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'تونس') {      
-    msg.react("????")
-    msg.channel.send("????")
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'سوريا') {      
-    msg.react("????")
-    msg.channel.send("????")
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'ليبيا') {      
-    msg.react("????")
-    msg.channel.send("????")
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'قطر') {      
-    msg.react("????")
-    msg.channel.send("????")
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'الصومال') {      
-    msg.react("????")
-    msg.channel.send("????")
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'عمان') {      
-    msg.react("????")
-    msg.channel.send("????")
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'موريتانيا') {      
-    msg.react("????")
-    msg.channel.send("????")
-  }
-});
 
 client.on('message', function(message) {
     if (message.channel.type === "dm") {
@@ -619,24 +465,6 @@ client.on('guildMemberRemove', Sal => { //By Salto7#4595
   channel.send({embed : embed});
   });
 
-	client.on('message' , message => {
-if (message.content === '$op') {
-         let embed = new Discord.RichEmbed()
-.setThumbnail(message.author.avatarURL)    
-      .addField("**تم تطوير وبرمجه البوت من قبل ?? **","**???????¤??7?????_?????????????\ #5526**")
-.setColor('#B101FC')
-  message.author.sendEmbed(embed);
-    }
-});
-
-
-client.on('guildCreate', guild => {
-  var embed = new Discord.RichEmbed()
-  .setColor(0x5500ff)
-  .setDescription('شكراً لك لإضافه البوت الى سيرفرك')
-      guild.owner.send(embed)
-});
-
 
 client.on('message', function(msg) {
     const prefix = '$'
@@ -732,7 +560,7 @@ client.on('message', message=> {
     if (message.author.bot) return;
     if (message.isMentioned(client.user))
     {
-    message.reply("هلا امرني اذا تبي مساعده اكتب $help");
+    message.reply("هلا امرني   ");
     }
 });
 
