@@ -86,29 +86,26 @@ const embed = new Discord.RichEmbed()
 ** !inv ~ لدعوة البوت ل سيرفرك**
 ** !suppport ~ سيرفر البوت **
    [❖═══════ اوامر اداريه ═══════❖]
-** !uchat ~ ل فك تقفيل الشات**
-** !cchat ~ ل تقفيل الشات**
-** !umute ~ لفك الميوت الكتابي**
-** !mute ~ لعمل ميوت كتابي لحد**
-** !send ~ ل عمل تصويت ب روم محدد**
-** !bc ~ ل ارسال رساله لاعضاء السيرفر**
-** !ban ~ ل تبنيد احد من السيرفر**
-** !kick ~ ل طرد احد من السيرفر**
-** !role ~ ل اعطاء احد رتبه**
-** !ccolors ~ لانشاء 200 لون **
-** !bans ~ لمعرفت عدد الاشخاص المتبندين **
-** !id ~ لعرض معلومات حسابك **
-** !clear ~ ل مسح الرسائل **
-** !avatar ~ ل عرض صورتك **
-** !ping ~ لمعرفت سرعة البوت **
-** !warn ~ لاعطاء تحذير لاحد **     
-**welcome لتشغيل خاصية ترحيب اصنع روم باسم**
-** <><><><><><><><><>><><><><><><><<>><<><>>< **
-**byby لتشغيل خاصية المغادرة اصنع روم باسم**
-** <><><><><><>><<>><><><><><><><><><><>><><> **    
-** warnsاصنع روم باسم!warnلتشغيل خاصية **
-** <><><><<><<><><><>><<><>><<><><><><><><> **
-** :hammer_pick: بوت مزال تحت تطوير  :tools: **
+**:arrow_right:  !uchat ~ ل فك تقفيل الشات**
+**:arrow_right:  !cchat ~ ل تقفيل الشات**
+**:arrow_right:  !umute ~ لفك الميوت الكتابي**
+**:arrow_right:  !mute ~ لعمل ميوت كتابي لحد**
+**:arrow_right:  !send ~ ل عمل تصويت ب روم محدد**
+**:arrow_right:  !bc ~ ل ارسال رساله لاعضاء السيرفر**
+**:arrow_right:  !ban ~ ل تبنيد احد من السيرفر**
+**:arrow_right:  !kick ~ ل طرد احد من السيرفر**
+**:arrow_right:  !role ~ ل اعطاء احد رتبه**
+**:arrow_right:  !ccolors ~ لانشاء 200 لون **
+**:arrow_right:  !bans ~ لمعرفت عدد الاشخاص المتبندين **
+**:arrow_right:  !id ~ لعرض معلومات حسابك **
+**:arrow_right:  !clear ~ ل مسح الرسائل **
+**:arrow_right:  !avatar ~ ل عرض صورتك **
+**:arrow_right:  !ping ~ لمعرفت سرعة البوت **
+**:arrow_right:  !warn ~ لاعطاء تحذير لاحد **   
+**:arrow_right:  !say ~ لتكرير كلامك بامبد **
+**:arrow_double_down: :arrow_double_down: :arrow_double_down: :arrow_double_down: :arrow_double_down:**
+**:arrow_right:  warnsاصنع روم باسم!warnلتشغيل خاصية **
+**:arrow_right:  :hammer_pick: بوت مزال تحت تطوير  :tools: **
 `)
  message.author.sendEmbed(embed)
  
@@ -719,25 +716,6 @@ client.on('guildCreate', guild => {
       guild.owner.send(embed)
 });
 
-client.on('message', function(msg) {
-    const prefix = '!'
-    if(msg.content.startsWith (prefix  + 'server')) {
-      let embed = new Discord.RichEmbed()
-      .setColor('RANDOM')
-      .setThumbnail(msg.guild.iconURL)
-      .setTitle(`Showing Details Of  **${msg.guild.name}*`)
-      .addField('??** نوع السيرفر**',`[** __${msg.guild.region}__ **]`,true)
-      .addField('??** __الرتب__**',`[** __${msg.guild.roles.size}__ **]`,true)
-      .addField('??**__ عدد الاعضاء__**',`[** __${msg.guild.memberCount}__ **]`,true)
-      .addField('??**__ عدد الاعضاء الاونلاين__**',`[** __${msg.guild.members.filter(m=>m.presence.status == 'online').size}__ **]`,true)
-      .addField('??**__ الرومات الكتابية__**',`[** __${msg.guild.channels.filter(m => m.type === 'text').size}__** ]`,true)
-      .addField('??**__ رومات الصوت__**',`[** __${msg.guild.channels.filter(m => m.type === 'voice').size}__ **]`,true)
-      .addField('??**__ الأونـر__**',`**${msg.guild.owner}**`,true)
-      .addField('??**__ ايدي السيرفر__**',`**${msg.guild.id}**`,true)
-      .addField('??**__ تم عمل السيرفر في__**',msg.guild.createdAt.toLocaleString())
-      msg.channel.send({embed:embed});
-    }
-  });
 
 client.on('message', message=> {
     if (message.author.bot) return;
@@ -939,5 +917,29 @@ client.on("message", message => {
       }
     }
 })
+
+var prefix = "!";
+
+client.on('message', message => {
+  if (message.author.bot) return;
+  if (!message.content.startsWith(prefix)) return;
+
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+
+  let args = message.content.split(" ").slice(1);
+  
+ 
+
+if (command == "say") {
+    let say = new Discord.RichEmbed()
+    .setDescription(args.join("  "))
+    .setColor(0x23b2d6)
+    message.channel.sendEmbed(say);
+    message.delete();
+  }
+
+
+});
 
 client.login(process.env.BOT_TOKEN);
