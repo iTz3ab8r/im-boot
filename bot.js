@@ -91,8 +91,13 @@ const embed = new Discord.RichEmbed()
 ** !ccolors ~ لانشاء 200 لون **
 ** !bans ~ لمعرفت عدد الاشخاص المتبندين **
 ** !id ~ لعرض معلومات حسابك **
+** !clear ~ ل مسح الرسائل **
+** !avatar ~ ل عرض صورتك **
+** !ping ~ لمعرفت سرعة البوت **
+** !warn ~ لاعطاء تحذير لاحد **     
 **welcome لتشغيل خاصية ترحيب اصنع روم باسم**
 **byby لتشغيل خاصية المغادرة اصنع روم باسم**
+** warnsاصنع روم باسم!warnلتشغيل خاصية **
 `)
  message.author.sendEmbed(embed)
  
@@ -847,5 +852,83 @@ client.on('message', msg => {
     msg.reply('السيرفر للمساعده,https://discord.gg/pP6FEA');
   }
 });
+
+client.on('message', message => {
+    var args = message.content.split(/[ ]+/)
+    if(message.content.includes('discord.gg')){
+      if(!message.member.hasPermission('ADMINISTRATOR'))
+        message.delete()
+    return message.reply(`** No Invite Links :angry: ! **`)
+    }
+});
+
+client.on('message', message => {
+  if(message.content === ('!clear')) {
+  let modRole = message.guild.roles.find("name", "Admin");
+  if (!modRole) return message.reply('You do not have Admin Role'); {
+    }
+  const params = message.content.split(" ").slice(1)
+    let messagecount = parseInt(params[0]);
+    message.channel.fetchMessages({limit: messagecount})
+        .then(messages => message.channel.bulkDelete(messages));
+  }
+});
+
+client.on("message", message => {
+    var prefix = "!";
+ 
+            var args = message.content.substring(prefix.length).split(" ");
+            if (message.content.startsWith(prefix + "clear")) {
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('? | **ليس لديك صلاحيات**');
+        var msg;
+        msg = parseInt();
+      
+      message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
+      message.channel.sendMessage("", {embed: {
+        title: "Done | تــم",
+        color: 0x06DF00,
+        description: "تم مسح الرسائل بنجاح",
+        footer: {
+          text: "EL JOKER."
+        }
+      }}).then(msg => {msg.delete(3000)});
+                          }
+
+     
+});
+
+client.on('message', message => {
+    if (message.content === "!avatar") {
+    message.reply(message.author.avatarURL); 
+    }
+});
+
+client.on("message", message => {
+      if (message.content === "!ping") {
+      const embed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .addField('**Ping:**' , `${Date.now() - message.createdTimestamp}` + ' ms')
+  message.channel.sendEmbed(embed);
+    }
+});
+
+ client.on('message', msg => {
+    if (msg.content.startsWith(`!warn`)) {
+       let args = msg.content.split(" ").slice(1);
+      if (!msg.mentions.members.first()) return msg.reply('منشن الشخص المحدد')
+      if (!args[1]) return msg.reply('``اكتب السبب``')
+      //غير اسم الروم او سوي روم بذا الاسم
+      if (msg.guild.channels.find('name', 'warns')) {
+        //اذا غيرت فوق غير هنا كمان
+        msg.guild.channels.find('name', 'warns').send(`
+      تم اعطائك تنبيه : ${msg.mentions.members.first()}
+      لأنك قمت بما يلي
+      ${args.join(" ").split(msg.mentions.members.first()).slice(' ')}
+      `)
+      }
+    }
+})
+
+
 
 client.login(process.env.BOT_TOKEN);
