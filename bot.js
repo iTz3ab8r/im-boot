@@ -921,8 +921,6 @@ client.on("message", message => {
     }
 })
 
-var prefix = "!";
-
 client.on('message', message => {
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
@@ -934,7 +932,7 @@ client.on('message', message => {
   
  
 
-if (command == "say") {
+if (command == "!say") {
     let say = new Discord.RichEmbed()
     .setDescription(args.join("  "))
     .setColor(0x23b2d6)
