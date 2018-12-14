@@ -86,29 +86,28 @@ const embed = new Discord.RichEmbed()
 ** !inv ~ لدعوة البوت ل سيرفرك**
 ** !suppport ~ سيرفر البوت **
    [❖═══════ اوامر اداريه ═══════❖]
-** !uchat ~ ل فك تقفيل الشات**
-** !cchat ~ ل تقفيل الشات**
-** !umute ~ لفك الميوت الكتابي**
-** !mute ~ لعمل ميوت كتابي لحد**
-** !send ~ ل عمل تصويت ب روم محدد**
-** !bc ~ ل ارسال رساله لاعضاء السيرفر**
-** !ban ~ ل تبنيد احد من السيرفر**
-** !kick ~ ل طرد احد من السيرفر**
-** !role ~ ل اعطاء احد رتبه**
-** !ccolors ~ لانشاء 200 لون **
-** !bans ~ لمعرفت عدد الاشخاص المتبندين **
-** !id ~ لعرض معلومات حسابك **
-** !clear ~ ل مسح الرسائل **
-** !avatar ~ ل عرض صورتك **
-** !ping ~ لمعرفت سرعة البوت **
-** !warn ~ لاعطاء تحذير لاحد **   
-** !say ~ لتكرير كلامك بامبد **
-   [❖═══════ معلومات ═══════❖]
-**【welcome-الترحيب】 لتشغيل خاصية ترحيب اصنع روم باسم **
-**byby لتشغيل خاصية المغادرة اصنع روم باسم **
-**:arrow_right:  warnsاصنع روم باسم!warnلتشغيل خاصية **
-**:arrow_right:  :hammer_pick: بوت مزال تحت تطوير  :tools: **
-**The maker of pot: ๖̶̶̶ζ͜͡¤Møhámêđ Khá£¥đ👑#3019**
+:arrow_right: ** !uchat ~ ل فك تقفيل الشات**
+:arrow_right: ** !cchat ~ ل تقفيل الشات**
+:arrow_right: ** !umute ~ لفك الميوت الكتابي**
+:arrow_right: ** !mute ~ لعمل ميوت كتابي لحد**
+:arrow_right: ** !send ~ ل عمل تصويت ب روم محدد**
+:arrow_right: ** !bc ~ ل ارسال رساله لاعضاء السيرفر**
+:arrow_right: ** !ban ~ ل تبنيد احد من السيرفر**
+:arrow_right: ** !kick ~ ل طرد احد من السيرفر**
+:arrow_right: ** !role ~ ل اعطاء احد رتبه**
+:arrow_right: ** !ccolors ~ لانشاء 200 لون **
+:arrow_right: ** !bans ~ لمعرفت عدد الاشخاص المتبندين **
+:arrow_right: ** !id ~ لعرض معلومات حسابك **
+:arrow_right: ** !clear ~ ل مسح الرسائل **
+:arrow_right: ** !avatar ~ ل عرض صورتك **
+:arrow_right: ** !ping ~ لمعرفت سرعة البوت **
+:arrow_right: ** !warn ~ لاعطاء تحذير لاحد **   
+   [❖═══════ معلومات ═══════❖
+:globe_with_meridians: **welcomeلتشغيل خاصية الترحيب اصنع روم باسم**
+:globe_with_meridians: :globe_with_meridians: :globe_with_meridians: **byby لتشغيل خاصية المغادرة اصنع روم باسم **
+:globe_with_meridians: :globe_with_meridians: **warnsاصنع روم باسم!warnلتشغيل خاصية **
+:globe_with_meridians: **:hammer_pick: بوت مزال تحت تطوير  :tools: **
+:fire: **The maker of pot: ๖̶̶̶ζ͜͡¤Møhámêđ Khá£¥đ👑#3019**:fire: 
 `)
  message.author.sendEmbed(embed)
  
@@ -493,7 +492,7 @@ client.on('guildMemberAdd', Sal => { //By Salto7#4595
     .addField(' 👤  انت رقم',`**[ ${Sal.guild.memberCount} ]**`,true)
     .setColor('RANDOM')
     .setFooter(Sal.guild.name, Sal.guild.iconURL, true)
-    var channel =Sal.guild.channels.find('【welcome-الترحيب】', 'welcome') //zهنا حط اسم الروم الي تبيه يكتب فيه
+    var channel =Sal.guild.channels.find('welcome', 'name') //zهنا حط اسم الروم الي تبيه يكتب فيه
     if (!channel) return;
     channel.send({embed : embed});
     });
@@ -920,27 +919,5 @@ client.on("message", message => {
       }
     }
 })
-
-client.on('message', message => {
-  if (message.author.bot) return;
-  if (!message.content.startsWith(prefix)) return;
-
-  let command = message.content.split(" ")[0];
-  command = command.slice(prefix.length);
-
-  let args = message.content.split(" ").slice(1);
-  
- 
-
-if (command == "!say") {
-    let say = new Discord.RichEmbed()
-    .setDescription(args.join("  "))
-    .setColor(0x23b2d6)
-    message.channel.sendEmbed(say);
-    message.delete();
-  }
-
-
-});
 
 client.login(process.env.BOT_TOKEN);
