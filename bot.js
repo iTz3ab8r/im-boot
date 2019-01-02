@@ -31,7 +31,7 @@ client.user.setStatus("online")
 //كود تغير البلاينج او التويتش
 
 const adminprefix = "!";//تذكير نغير البرفكس
-const devs = ['516576049778130954','427054141492297728'];//zمهم نحط الايدي
+const devs = ['516576049778130954','492575063233658880'];//zمهم نحط الايدي
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' '); //حقوق GMZN Host
     if (!devs.includes(message.author.id)) return;
@@ -110,7 +110,7 @@ const embed = new Discord.RichEmbed()
 :globe_with_meridians: **warns ~ اصنع روم باسم ~ !warn ~ لتشغيل خاصية **
 :globe_with_meridians: **اكتب اسم اي دولة يطلعلك العلم بتاعة:wink:  **
 :globe_with_meridians: **:hammer_pick: بوت مزال تحت تطوير  :tools: **
-:fire: **The maker of pot: ๖̶̶̶ζ͜͡¤Møhámêđ Khá£¥đ👑#3019**:fire: 
+:fire: **The maker of pot:҉FS҉UUYUYY_KING♕#0846**:fire: 
 `)
  message.author.sendEmbed(embed)
  
@@ -652,7 +652,7 @@ client.on('message', message => {
     if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
   if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
     let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
-    let copy = "ÉL JØKÊR 👑";
+    let copy = "GAMES NETWORK";
     let request = `Requested By ${message.author.username}`;
     if (!args) return message.reply('**يجب عليك كتابة كلمة او جملة لإرسال البرودكاست**');message.channel.send(`**هل أنت متأكد من إرسالك البرودكاست؟ \nمحتوى البرودكاست:** \` ${args}\``).then(msg => {
     msg.react('✅')
@@ -843,7 +843,7 @@ client.on('typingStart', (ch, user) => {
 
 client.on('message', msg => {
   if (msg.content === '!suppport') {
-    msg.reply('السيرفر للمساعده,https://discord.gg/pP6FEA');
+    msg.reply('السيرفر للمساعده,https://discord.gg/nDDY7c');
   }
 });
 
@@ -883,7 +883,7 @@ client.on("message", message => {
         color: 0x06DF00,
         description: "تم مسح الرسائل بنجاح",
         footer: {
-          text: "EL JOKER."
+          text: "GAMES NETWORK."
         }
       }}).then(msg => {msg.delete(3000)});
                           }
