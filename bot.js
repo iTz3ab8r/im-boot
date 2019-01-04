@@ -61,7 +61,7 @@ client.on('message' , message => {
  .setDescription("Add me" + `
  **
 رابط البوت |
-https://discordapp.com/api/oauth2/authorize?client_id=522572942807400449&permissions=0&scope=bot
+https://discordapp.com/api/oauth2/authorize?client_id=530836353605435413&permissions=0&scope=bot
  **
 `);
   message.author.sendEmbed(embed);
@@ -825,7 +825,7 @@ client.on('typingStart', (ch, user) => {
 
 client.on('message', msg => {
   if (msg.content === '!suppport') {
-    msg.reply('السيرفر للمساعده,https://discord.gg/nDDY7c');
+    msg.reply('السيرفر للمساعده,https://discord.gg/7z5c23T');
   }
 });
 
