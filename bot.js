@@ -110,6 +110,7 @@ const embed = new Discord.RichEmbed()
 :globe_with_meridians: **welcome ~ لتشغيل خاصية الترحيب اصنع روم باسم**
 :globe_with_meridians: **byby ~ لتشغيل خاصية المغادرة اصنع روم باسم **
 :globe_with_meridians: **warns ~ اصنع روم باسم ~ !warn ~ لتشغيل خاصية **
+:globe_with_meridians: ** تمت اضافت منع الروابط و روابط السيرفرات :wink:**
 :globe_with_meridians: **اكتب اسم اي دولة يطلعلك العلم بتاعة:wink:  **
 :globe_with_meridians: **:hammer_pick: بوت مزال تحت تطوير  :tools: **
 `)
@@ -481,26 +482,6 @@ client.on('message', async message => {
   } // حقوق الفا كودز
 });
 
-//كود الترحيب ب صوره
- 
-client.on('guildMemberAdd', Sal => { //By Salto7#4595
-    var embed = new Discord.RichEmbed()
-    .setAuthor(Sal.user.username, Sal.user.avatarURL)
-    .setThumbnail(Sal.user.avatarURL)
-    .setImage('http://live-timely-4jepdssgmc.time.ly/wp-content/uploads/2018/08/welcomeEvents.jpg') //هنا حط الصوره الي تبيها
-    .setTitle('عضو جديد!')
-    .setDescription('مرحبا بك بالسيرفر')
-    .addField('``ايدي العضو``:',"" +  Sal.user.id, true)
-    .addField('``تاق العضو``', Sal.user.discriminator, true)
-    .addField('``تم الانشاء في``', Sal.user.createdAt, true)
-    .addField(' 👤  انت رقم',`**[ ${Sal.guild.memberCount} ]**`,true)
-    .setColor('RANDOM')
-    .setFooter(Sal.guild.name, Sal.guild.iconURL, true)
-    var channel =Sal.guild.channels.find('welcome', 'name') //zهنا حط اسم الروم الي تبيه يكتب فيه
-    if (!channel) return;
-    channel.send({embed : embed});
-    });
-
 //كود الميوت وفك الميوت
  
 client.on('message', message => {  
@@ -858,41 +839,6 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-  if(message.content === ('!clear')) {
-  let modRole = message.guild.roles.find("name", "Admin");
-  if (!modRole) return message.reply('You do not have Admin Role'); {
-    }
-  const params = message.content.split(" ").slice(1)
-    let messagecount = parseInt(params[0]);
-    message.channel.fetchMessages({limit: messagecount})
-        .then(messages => message.channel.bulkDelete(messages));
-  }
-});
-
-client.on("message", message => {
-    var prefix = "!";
- 
-            var args = message.content.substring(prefix.length).split(" ");
-            if (message.content.startsWith(prefix + "clear")) {
-   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('? | **ليس لديك صلاحيات**');
-        var msg;
-        msg = parseInt();
-      
-      message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
-      message.channel.sendMessage("", {embed: {
-        title: "Done | تــم",
-        color: 0x06DF00,
-        description: "تم مسح الرسائل بنجاح",
-        footer: {
-          text: "GAMES NETWORK."
-        }
-      }}).then(msg => {msg.delete(3000)});
-                          }
-
-     
-});
-
-client.on('message', message => {
     if (message.content === "!avatar") {
     message.reply(message.author.avatarURL); 
     }
@@ -1165,6 +1111,44 @@ message.channel.sendMessage('جار ارسال الرسالة |:white_check_mark
 client.users.forEach(m =>{
 m.sendMessage(args)
 })
+}
+});
+
+    client.on("guildMemberAdd", function(member) {
+  const channel = member.guild.channels.find("name", "welcome")
+      const embed = new Discord.RichEmbed()
+      .setColor('RANDOM')
+      .setAuthor(member.user.tag, member.user.avatarURL)
+.setDescription('*** :heart:  ولكم نورت السيرفر ياشبحح نتمني لك الاستمتاع في السيرفر***')
+.setThumbnail(member.avatarURL)
+.setImage('https://cdn.discordapp.com/attachments/503693641878077475/504221403017510912/download.jpg')
+      if (!channel) return;
+      channel.sendEmbed(embed);
+});
+
+client.on('message', message => {
+    var args = message.content.split(/[ ]+/)
+    if(message.content.includes('.com')){
+      if(!message.member.hasPermission('MANAGE_MESSAGE'))
+        message.delete()
+    return message.reply(`**ممنوع نشر الروابط من فضلك تجنبا للميوت:x:**`)
+    }
+});
+
+if(command === "clear") {
+        const emoji = client.emojis.find("name", "wastebasket")
+    let textxt = args.slice(0).join("");
+    if(msg.member.hasPermission("MANAGE_MESSAGES")) {
+    if (textxt == "") {
+        msg.delete().then
+    msg.channel.send("***```ضع عدد الرسائل التي تريد مسحها 👌```***").then(m => m.delete(3000));
+} else {
+    msg.delete().then
+    msg.delete().then
+    msg.channel.bulkDelete(textxt);
+        msg.channel.send("```php\nعدد الرسائل التي تم مسحها: " + textxt + "\n```").then(m => m.delete(3000));
+        }    
+    }
 }
 });
 
