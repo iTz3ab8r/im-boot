@@ -93,7 +93,7 @@ const embed = new Discord.RichEmbed()
 :arrow_right: ** !send ~ ل عمل تصويت ب روم محدد**
 :arrow_right: ** !bc ~ ل ارسال رساله لاعضاء السيرفر**
 :arrow_right: ** !nbc ~ ل ارسال رساله لاعضاء السيرفر كلام فقد **
-:arrow_right: ** !bc ~ لعرض لك توقيت مصر والامارت **
+:arrow_right: ** !time ~ لعرض لك توقيت مصر والامارت **
 :arrow_right: ** !ban ~ ل تبنيد احد من السيرفر**
 :arrow_right: ** !kick ~ ل طرد احد من السيرفر**
 :arrow_right: ** !role ~ ل اعطاء احد رتبه**
@@ -112,7 +112,6 @@ const embed = new Discord.RichEmbed()
 :globe_with_meridians: **warns ~ اصنع روم باسم ~ !warn ~ لتشغيل خاصية **
 :globe_with_meridians: **اكتب اسم اي دولة يطلعلك العلم بتاعة:wink:  **
 :globe_with_meridians: **:hammer_pick: بوت مزال تحت تطوير  :tools: **
-:fire: **The maker of pot:҉FS҉UUYUYY_KING♕#0846**:fire: 
 `)
  message.author.sendEmbed(embed)
  
