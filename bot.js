@@ -1162,4 +1162,14 @@ client.on("message", message => {
      
 });
 
+client.on("message", message => {
+var prefix = "!";
+        if(message.content.startsWith(prefix + "say")) {
+    if(message.author.id !== "516576049778130954") return message.reply("هذا الامر لصحاب البوت فقط");
+        let args = message.content.split(" ").slice(1);
+message.channel.send(args)
+        }
+});
+
+
 client.login(process.env.BOT_TOKEN);
