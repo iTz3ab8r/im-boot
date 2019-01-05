@@ -76,13 +76,8 @@ if (message.content === "!help") {
    message.channel.send('**تم ارسالك في الخاص** :mailbox_with_mail: ');
 const embed = new Discord.RichEmbed()
     .setDescription(`
-**╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱
-╱╱┏╮╱╱╱╱╱╱╱╱╱╱╱
-╱╱┃┃╱╱╱┳╱┓┳╭┫┳┓
-▉━╯┗━╮╱┃╱┃┣┻╮┣╱
-▉┈┈┈┈┃╱┻┛┛┻╱┻┻┛
-▉╮┈┈┈┃╱╱╱╱╱╱╱╱╱
-╱╰━━━╯╱╱╱╱╱╱╱╱╱**
+         :fire:**~~((WolfTeam Bot ∾))~~**:fire:
+**  GMZN هو بوت اداري يعمل 24 ساعة وبيهي اكواد ضد تهكير سيرفرات هذا بوت من احد بوتات شركة WolfTeam Bot ∾ ا**اهلا بيكم في بوت
 **:fire: !inv ~ لدعوة البوت ل سيرفرك :fire:**
 **:fire: !suppport ~ سيرفر البوت :fire:**
    [❖═══════ اوامر اداريه ═══════❖]
@@ -90,20 +85,21 @@ const embed = new Discord.RichEmbed()
 :arrow_right: ** !cchat ~ ل تقفيل الشات**
 :arrow_right: ** !umute ~ لفك الميوت الكتابي**
 :arrow_right: ** !mute ~ لعمل ميوت كتابي لحد**
-:arrow_right: ** !send ~ ل عمل تصويت ب روم محدد**
-:arrow_right: ** !bc ~ ل ارسال رساله لاعضاء السيرفر**
-:arrow_right: ** !nbc ~ ل ارسال رساله لاعضاء السيرفر كلام فقد **
-:arrow_right: ** !time ~ لعرض لك توقيت مصر والامارت **
 :arrow_right: ** !ban ~ ل تبنيد احد من السيرفر**
 :arrow_right: ** !kick ~ ل طرد احد من السيرفر**
 :arrow_right: ** !role ~ ل اعطاء احد رتبه**
 :arrow_right: ** !ccolors ~ لانشاء 200 لون **
+:arrow_right: ** !clear ~ ل مسح الرسائل **
+:arrow_right: ** !warn ~ لاعطاء تحذير لاحد **   
+:arrow_right: ** !send ~ ل عمل تصويت ب روم محدد**
+:arrow_right: ** !bc ~ ل ارسال رساله لاعضاء السيرفر**
+:arrow_right: ** !nbc ~ ل ارسال رساله لاعضاء السيرفر كلام فقد **
+   [❖═══════ اوامر عامه ═══════❖]
+:arrow_right: ** !time ~ لعرض لك توقيت مصر والامارت **
 :arrow_right: ** !bans ~ لمعرفت عدد الاشخاص المتبندين **
 :arrow_right: ** !id ~ لعرض معلومات حسابك **
-:arrow_right: ** !clear ~ ل مسح الرسائل **
 :arrow_right: ** !avatar ~ ل عرض صورتك **
 :arrow_right: ** !ping ~ لمعرفت سرعة البوت **
-:arrow_right: ** !warn ~ لاعطاء تحذير لاحد **   
 :arrow_right: ** !ticket ~ لعمل روم مساعده او استفسار مبينك انت والادمنيه**
 :arrow_right: ** !server ~ يعرض لك معلومات عن السيرفر **
 :arrow_right: ** !bot ~ يعرض لك معلومات عن البوت ** 
@@ -111,7 +107,7 @@ const embed = new Discord.RichEmbed()
 :globe_with_meridians: **welcome ~ لتشغيل خاصية الترحيب اصنع روم باسم**
 :globe_with_meridians: **byby ~ لتشغيل خاصية المغادرة اصنع روم باسم **
 :globe_with_meridians: **warns ~ اصنع روم باسم ~ !warn ~ لتشغيل خاصية **
-:globe_with_meridians: **invited ~ لتشغيل خاصية الدعوة ويسوي منشن للدعو الشخص سوي روم باسم:wink:**
+:globe_with_meridians: **invited ~ لتشغيل خاصية الدعوة ويسوي منشن للدعو الشخص سوي روم باسم**
 :globe_with_meridians: ** تمت اضافت منع الروابط و روابط السيرفرات :wink:**
 :globe_with_meridians: **اكتب اسم اي دولة يطلعلك العلم بتاعة:wink:  **
 :globe_with_meridians: **:hammer_pick: بوت مزال تحت تطوير  :tools: **
@@ -636,7 +632,7 @@ client.on('message', message => {
     if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
   if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
     let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
-    let copy = "GAMES NETWORK";
+    let copy = "WolfTeam Bot ∾";
     let request = `Requested By ${message.author.username}`;
     if (!args) return message.reply('**يجب عليك كتابة كلمة او جملة لإرسال البرودكاست**');message.channel.send(`**هل أنت متأكد من إرسالك البرودكاست؟ \nمحتوى البرودكاست:** \` ${args}\``).then(msg => {
     msg.react('✅')
@@ -812,7 +808,7 @@ client.on('typingStart', (ch, user) => {
   .setThumbnail(message.author.avatarURL)  
   .setAuthor(message.author.username)
 .setDescription("معلومات عن الحــساب")
-               .setFooter(`EL JOKER.`, '')
+               .setFooter(`WolfTeam Bot ∾.`, '')
   .setColor("#9B59B6")
   .addField("اســـم الحســاب", `${message.author.username}`)
   .addField('كود الحساب الخاص', message.author.discriminator)
@@ -1156,7 +1152,7 @@ client.on("message", message => {
         color: 0x06DF00,
         description: "تم مسح الرسائل بنجاح",
         footer: {
-          text: "11111."
+          text: "WolfTeam Bot ∾."
         }
       }}).then(msg => {msg.delete(3000)});
                           }
