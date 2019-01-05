@@ -106,10 +106,12 @@ const embed = new Discord.RichEmbed()
 :arrow_right: ** !warn ~ لاعطاء تحذير لاحد **   
 :arrow_right: ** !ticket ~ لعمل روم مساعده او استفسار مبينك انت والادمنيه**
 :arrow_right: ** !server ~ يعرض لك معلومات عن السيرفر **
+:arrow_right: ** !bot ~ يعرض لك معلومات عن البوت ** 
    [❖═══════ معلومات ═══════❖
 :globe_with_meridians: **welcome ~ لتشغيل خاصية الترحيب اصنع روم باسم**
 :globe_with_meridians: **byby ~ لتشغيل خاصية المغادرة اصنع روم باسم **
 :globe_with_meridians: **warns ~ اصنع روم باسم ~ !warn ~ لتشغيل خاصية **
+:globe_with_meridians: **invited ~ لتشغيل خاصية الدعوة ويسوي منشن للدعو الشخص سوي روم باسم:wink:**
 :globe_with_meridians: ** تمت اضافت منع الروابط و روابط السيرفرات :wink:**
 :globe_with_meridians: **اكتب اسم اي دولة يطلعلك العلم بتاعة:wink:  **
 :globe_with_meridians: **:hammer_pick: بوت مزال تحت تطوير  :tools: **
@@ -1176,9 +1178,27 @@ client.on('guildMemberAdd', member => {
     const ei = invites[member.guild.id];
     const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
     const inviter = client.users.get(invite.inviter.id);
-    const channel = member.guild.channels.find("name", "welcome");
+    const channel = member.guild.channels.find("name", "invited");
      channel.send(`<@${member.user.id}> ** joined; ** Invited by ** <@${inviter.id}> ** `);
   });
+});
+
+client.on('message', message => {
+    if (message.content === ('!bot')) {
+    message.channel.send({
+        embed: new Discord.RichEmbed()
+            .setAuthor(client.user.username,client.user.avatarURL)
+            .setThumbnail(client.user.avatarURL)
+            .setColor('RANDOM')
+            .addField('**Bot Ping**🚀 :' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
+            .addField('**Servers**📚 :', [client.guilds.size], true)
+            .addField('**Channels**📝 :' , `[ ${client.channels.size} ]` , true)
+            .addField('**Users**🔮 :' ,`[ ${client.users.size} ]` , true)
+            .addField('**Bot Name**🔰 :' , `[ ${client.user.tag} ]` , true)
+            .addField('**Bot Owner**👑 :' , `[<@516576049778130954>]` , true)
+            .setFooter(message.author.username, message.author.avatarURL)
+    })
+}
 });
 
 
