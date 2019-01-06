@@ -9,7 +9,7 @@ const YouTube = require('simple-youtube-api');
 const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const queue = new Map();
 const UserBlocked = new Set();
-const prefix = '!'
+const prefix = '^'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -30,7 +30,7 @@ client.user.setStatus("online")
 
 //كود تغير البلاينج او التويتش
 
-const adminprefix = "!";//تذكير نغير البرفكس
+const adminprefix = "^";//تذكير نغير البرفكس
 const devs = ['516576049778130954','492575063233658880'];//zمهم نحط الايدي
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' '); //حقوق GMZN Host
@@ -52,7 +52,7 @@ if (message.content.startsWith(adminprefix + 'tw')) {
 
 client.on('message' , message => {
  
-    if (message.content === "!inv") {
+    if (message.content === "^inv") {
         message.reply(`تم ارساله الرابط في الخاص`)
         if(!message.channel.guild) return message.reply('**الآمر فقط في السيرفرات**');
      const embed = new Discord.RichEmbed()
@@ -72,43 +72,47 @@ https://discordapp.com/api/oauth2/authorize?client_id=530836353605435413&permiss
 
 client.on("message", message => {
   var prefix = "*";
-if (message.content === "!help") {
+if (message.content === "^help") {
    message.channel.send('**تم ارسالك في الخاص** :mailbox_with_mail: ');
 const embed = new Discord.RichEmbed()
     .setDescription(`
          :fire:**~~((WolfTeam Bot ∾))~~**:fire:
-**  GMZN هو بوت اداري يعمل 24 ساعة وبيهي اكواد ضد تهكير سيرفرات هذا بوت من احد بوتات شركة WolfTeam Bot ∾ ا**اهلا بيكم في بوت
-**:fire: !inv ~ لدعوة البوت ل سيرفرك :fire:**
-**:fire: !suppport ~ سيرفر البوت :fire:**
+ **[❖═══════ مميزات البوت :robot:  ═══════❖]**
+  **:fire:**~~((WolfTeam Bot ∾))~~**:fire:**
+**يعمل 24 ساعه بدون توقف الا في حالة صيانه**
+** وسرعة البوت سريعه جدا GMZN Host علي خادم**
+**البوت فيه اكواد حمايه من اي تهكير**
+**يعني سيرفرك البوت هيكونو في امان**
+**ابوت فيه كود مانع لنشر الروابط:robot:**
    [❖═══════ اوامر اداريه ═══════❖]
-:arrow_right: ** !uchat ~ ل فك تقفيل الشات**
-:arrow_right: ** !cchat ~ ل تقفيل الشات**
-:arrow_right: ** !umute ~ لفك الميوت الكتابي**
-:arrow_right: ** !mute ~ لعمل ميوت كتابي لحد**
-:arrow_right: ** !ban ~ ل تبنيد احد من السيرفر**
-:arrow_right: ** !kick ~ ل طرد احد من السيرفر**
-:arrow_right: ** !role ~ ل اعطاء احد رتبه**
-:arrow_right: ** !ccolors ~ لانشاء 200 لون **
-:arrow_right: ** !clear ~ ل مسح الرسائل **
-:arrow_right: ** !warn ~ لاعطاء تحذير لاحد **   
-:arrow_right: ** !send ~ ل عمل تصويت ب روم محدد**
-:arrow_right: ** !bc ~ ل ارسال رساله لاعضاء السيرفر**
-:arrow_right: ** !nbc ~ ل ارسال رساله لاعضاء السيرفر كلام فقد **
+:arrow_right: ** ^uchat ~ ل فك تقفيل الشات**
+:arrow_right: ** ^cchat ~ ل تقفيل الشات**
+:arrow_right: ** ^umute ~ لفك الميوت الكتابي**
+:arrow_right: ** ^mute ~ لعمل ميوت كتابي لحد**
+:arrow_right: ** ^ban ~ ل تبنيد احد من السيرفر**
+:arrow_right: ** ^kick ~ ل طرد احد من السيرفر**
+:arrow_right: ** ^role ~ ل اعطاء احد رتبه**
+:arrow_right: ** ^ccolors ~ لانشاء 200 لون **
+:arrow_right: ** ^clear ~ ل مسح الرسائل **
+:arrow_right: ** ^warn ~ لاعطاء تحذير لاحد **   
+:arrow_right: ** ^send ~ ل عمل تصويت ب روم محدد**
+:arrow_right: ** ^bc ~ ل ارسال رساله لاعضاء السيرفر**
+:arrow_right: ** ^nbc ~ ل ارسال رساله لاعضاء السيرفر كلام فقد **
    [❖═══════ اوامر عامه ═══════❖]
-:arrow_right: ** !time ~ لعرض لك توقيت مصر والامارت **
-:arrow_right: ** !bans ~ لمعرفت عدد الاشخاص المتبندين **
-:arrow_right: ** !id ~ لعرض معلومات حسابك **
-:arrow_right: ** !avatar ~ ل عرض صورتك **
-:arrow_right: ** !ping ~ لمعرفت سرعة البوت **
-:arrow_right: ** !ticket ~ لعمل روم مساعده او استفسار مبينك انت والادمنيه**
-:arrow_right: ** !server ~ يعرض لك معلومات عن السيرفر **
-:arrow_right: ** !bot ~ يعرض لك معلومات عن البوت ** 
+:arrow_right: ** ^time ~ لعرض لك توقيت مصر والامارت **
+:arrow_right: ** ^bans ~ لمعرفت عدد الاشخاص المتبندين **
+:arrow_right: ** ^id ~ لعرض معلومات حسابك **
+:arrow_right: ** ^avatar ~ ل عرض صورتك **
+:arrow_right: ** ^ping ~ لمعرفت سرعة البوت **
+:arrow_right: ** ^ticket ~ لعمل روم مساعده او استفسار مبينك انت والادمنيه**
+:arrow_right: ** ^server ~ يعرض لك معلومات عن السيرفر **
+:arrow_right: ** ^bot ~ يعرض لك معلومات عن البوت ** 
    [❖═══════ معلومات ═══════❖
 :globe_with_meridians: **welcome ~ لتشغيل خاصية الترحيب اصنع روم باسم**
 :globe_with_meridians: **byby ~ لتشغيل خاصية المغادرة اصنع روم باسم **
-:globe_with_meridians: **warns ~ اصنع روم باسم ~ !warn ~ لتشغيل خاصية **
-:globe_with_meridians: **invited ~ لتشغيل خاصية الدعوة ويسوي منشن للدعو الشخص سوي روم باسم**
+:globe_with_meridians: **warns ~ اصنع روم باسم ~ ^warn ~ لتشغيل خاصية **
 :globe_with_meridians: ** تمت اضافت منع الروابط و روابط السيرفرات :wink:**
+:globe_with_meridians: ** log لتشغيل الحمياة ضد هاكر اصنع روم لاسم :wink:**
 :globe_with_meridians: **اكتب اسم اي دولة يطلعلك العلم بتاعة:wink:  **
 :globe_with_meridians: **:hammer_pick: بوت مزال تحت تطوير  :tools: **
 `)
@@ -195,7 +199,7 @@ client.on('message', async message => {
     if(message.author.bot) return;
     if(message.channel.type === 'dm') return;
  
-    var prefix = '!'; //<==== تقدر تغير البرفكس
+    var prefix = '^'; //<==== تقدر تغير البرفكس
     var args = message.content.toLowerCase().split(' ');
     var command = args[0];
     var userM = message.guild.member(message.mentions.users.first() || message.guild.members.find(m => m.id === args[1]));
@@ -484,7 +488,7 @@ client.on('message', async message => {
  
 client.on('message', message => {  
 if (message.author.boss) return;
-var prefix = "!";
+var prefix = "^";
 if (!message.content.startsWith(prefix)) return;
 let command = message.content.split(" ")[0];
 command = command.slice(prefix.length);
@@ -554,7 +558,7 @@ var unmuteembeddm = new Discord.RichEmbed()
 //كود امر عمل تصويت من البوت في روم مخصص
  
 client.on('message' , message => {
-  var prefix = "!";
+  var prefix = "^";
   if(message.author.bot) return;
   if(message.content.startsWith(prefix + "send")) {
   if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
@@ -595,7 +599,7 @@ suggestchannel.send("@everyone || @here ");
  
 client.on('message', message => {
  
-    if (message.content === "!cchat") {
+    if (message.content === "^cchat") {
                         if(!message.channel.guild) return message.reply(' هذا الامر فقط للسيرفرات !!');
  
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' ليس لديك صلاحيات');
@@ -606,7 +610,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' لي
                message.reply("تم تقفيل الشات ✅ ")
            });
              }
-if (message.content === "!uchat") {
+if (message.content === "^uchat") {
     if(!message.channel.guild) return message.reply(' هذا الامر فقط للسيرفرات !!');
  
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('ليس لديك صلاحيات');
@@ -626,7 +630,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('لي�
 //ثاني كود معنا هوا البرودكاست البشكل جميل
  
 client.on('message', message => {
-        var prefix = "!";
+        var prefix = "^";
               if(!message.channel.guild) return;
     if(message.content.startsWith(prefix + 'bc')) {
     if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
@@ -706,7 +710,7 @@ client.on('message', message=> {
     if (message.author.bot) return;
     if (message.isMentioned(client.user))
     {
-    message.reply("هلا امرني اذا تبي مساعده اكتب !help");
+    message.reply("هلا امرني اذا تبي مساعده اكتب ^help");
     }
 });
 
@@ -723,7 +727,7 @@ client.on('message', function(message) {
     });
     
     client.on('message', message=>{
-    if (message.content === '!ccolors'){
+    if (message.content === '^ccolors'){
     if(!message.channel.guild) return;
     if (message.member.hasPermission('MANAGE_ROLES')){
     setInterval(function(){})
@@ -738,7 +742,7 @@ client.on('message', function(message) {
     });
 
 client.on('message', message => {
-    if (message.content.startsWith("!bans")) {
+    if (message.content.startsWith("^bans")) {
      if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply("**انت لا تملك صلاحية الباند**");
 
 
@@ -803,7 +807,7 @@ client.on('typingStart', (ch, user) => {
 });
 
     client.on('message', message => {
-     if (message.content === "!id") {
+     if (message.content === "^id") {
      let embed = new Discord.RichEmbed()
   .setThumbnail(message.author.avatarURL)  
   .setAuthor(message.author.username)
@@ -822,7 +826,7 @@ client.on('typingStart', (ch, user) => {
 });
 
 client.on('message', msg => {
-  if (msg.content === '!suppport') {
+  if (msg.content === '^suppport') {
     msg.reply('السيرفر للمساعده,https://discord.gg/7z5c23T');
   }
 });
@@ -837,13 +841,13 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-    if (message.content === "!avatar") {
+    if (message.content === "^avatar") {
     message.reply(message.author.avatarURL); 
     }
 });
 
 client.on("message", message => {
-      if (message.content === "!ping") {
+      if (message.content === "^ping") {
       const embed = new Discord.RichEmbed()
   .setColor("RANDOM")
   .addField('**Ping:**' , `${Date.now() - message.createdTimestamp}` + ' ms')
@@ -852,7 +856,7 @@ client.on("message", message => {
 });
 
  client.on('message', msg => {
-    if (msg.content.startsWith(`!warn`)) {
+    if (msg.content.startsWith(`^warn`)) {
        let args = msg.content.split(" ").slice(1);
       if (!msg.mentions.members.first()) return msg.reply('منشن الشخص المحدد')
       if (!args[1]) return msg.reply('``اكتب السبب``')
@@ -961,7 +965,7 @@ client.on('message', msg => {
 
 client.on("message", (message) => {
     /// ALPHA CODES
-   if (message.content.startsWith("!ticket")) {     /// ALPHA CODES
+   if (message.content.startsWith("^ticket")) {     /// ALPHA CODES
         const reason = message.content.split(" ").slice(1).join(" ");     /// ALPHA CODES
         if (!message.guild.roles.exists("name", "Support Team")) return message.channel.send(`This server doesn't have a \`Support Team\` role made, so the ticket won't be opened.\nIf you are an administrator, make one with that name exactly and give it to users that should be able to see tickets.`);
         if (message.guild.channels.exists("name", "ticket-{message.author.id}" + message.author.id)) return message.channel.send(`You already have a ticket open.`);    /// ALPHA CODES
@@ -992,10 +996,10 @@ client.on("message", (message) => {
     }
  
  
-  if (message.content.startsWith("!close")) {
+  if (message.content.startsWith("^close")) {
         if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`You can't use the close command outside of a ticket channel.`);
  
-        message.channel.send(`هل أنت متأكد؟ بعد التأكيد ، لا يمكنك عكس هذا الإجراء!\n للتأكيد ، اكتب\`*confirm\`. سيؤدي ذلك إلى مهلة زمنية في غضون 10 ثوانٍ وإلغائها`)
+        message.channel.send(`هل أنت متأكد؟ بعد التأكيد ، لا يمكنك عكس هذا الإجراء!\n للتأكيد ، اكتب\`^confirm\`. سيؤدي ذلك إلى مهلة زمنية في غضون 10 ثوانٍ وإلغائها`)
             .then((m) => {
                 message.channel.awaitMessages(response => response.content === '*confirm', {
                         max: 1,
@@ -1016,7 +1020,7 @@ client.on("message", (message) => {
 });
 
 client.on('message', function(msg) {
-    const prefix = '!'
+    const prefix = '^'
     if(msg.content.startsWith (prefix  + 'server')) {
       let embed = new Discord.RichEmbed()
       .setColor('RANDOM')
@@ -1035,7 +1039,7 @@ client.on('message', function(msg) {
     }
   });
 
-var p = "!";
+var p = "^";
 client.on('message', message => {
          if (message.content === prefix + "time") {
          if (!message.channel.guild) return message.reply('** This command only for servers **');  
@@ -1138,7 +1142,7 @@ client.on('guildMemberAdd', member=> {
     });
 
 client.on("message", message => {
-    var prefix = "!";
+    var prefix = "^";
  
             var args = message.content.substring(prefix.length).split(" ");
             if (message.content.startsWith(prefix + "clear")) {
@@ -1161,7 +1165,7 @@ client.on("message", message => {
 });
 
 client.on("message", message => {
-var prefix = "!";
+var prefix = "^";
         if(message.content.startsWith(prefix + "say")) {
     if(message.author.id !== "516576049778130954") return message.reply("هذا الامر لصحاب البوت فقط");
         let args = message.content.split(" ").slice(1);
@@ -1169,18 +1173,8 @@ message.channel.send(args)
         }
 });
 
-client.on('guildMemberAdd', member => {
-  member.guild.fetchInvites().then(guildInvites => {
-    const ei = invites[member.guild.id];
-    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
-    const inviter = client.users.get(invite.inviter.id);
-    const channel = member.guild.channels.find("name", "invited");
-     channel.send(`<@${member.user.id}> ** joined; ** Invited by ** <@${inviter.id}> ** `);
-  });
-});
-
 client.on('message', message => {
-    if (message.content === ('!bot')) {
+    if (message.content === ('^bot')) {
     message.channel.send({
         embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
