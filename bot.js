@@ -76,7 +76,7 @@ if (message.content === "^help") {
    message.channel.send('**تم ارسالك في الخاص** :mailbox_with_mail: ');
 const embed = new Discord.RichEmbed()
     .setDescription(`
- **[❖═══════ مميزات البوت :robot:  ═══════❖]**
+[❖═══════ مميزات البوت :robot:  ═══════❖]
 **يعمل 24 ساعه بدون توقف الا في حالة صيانه**
 ** وسرعة البوت سريعه جدا WolfTeam Bot ℘ علي خادم**
 **البوت فيه اكواد حمايه من اي تهكير**
@@ -99,8 +99,7 @@ const embed = new Discord.RichEmbed()
 :arrow_right: ** ^ct ~ ل انشاء روم كتابي **
 :arrow_right: ** ^cv ~ ل انشاء روم صوتي ** 
 :arrow_right: ** ^hchannel ~ ل اخفاء جميع رومات السيرفر **
-:arrow_right: ** ^schannel ~ ل اظهار جميع رومات السيرفر 
-
+:arrow_right: ** ^schannel ~ ل اظهار جميع رومات السيرفر **
    [❖═══════ اوامر عامه ═══════❖]
 :arrow_right: ** ^time ~ لعرض لك توقيت مصر والامارت **
 :arrow_right: ** ^bans ~ لمعرفت عدد الاشخاص المتبندين **
@@ -108,10 +107,9 @@ const embed = new Discord.RichEmbed()
 :arrow_right: ** ^avatar ~ ل عرض صورتك **
 :arrow_right: ** ^ping ~ لمعرفت سرعة البوت **
 :arrow_right: ** ^ticket ~ لعمل روم مساعده او استفسار مبينك انت والادمنيه**
-:arrow_right: ** ^invites ~ لعرض لك  عدد الاشخاص الذي قمت بدعوتهم للسيرفر **
 :arrow_right: ** ^server ~ يعرض لك معلومات عن السيرفر **
 :arrow_right: ** ^bot ~ يعرض لك معلومات عن البوت ** 
-   [❖═══════ معلومات ═══════❖
+   [❖═══════ معلومات ═══════❖]
 :globe_with_meridians: **welcome ~ لتشغيل خاصية الترحيب اصنع روم باسم**
 :globe_with_meridians: **byby ~ لتشغيل خاصية المغادرة اصنع روم باسم **
 :globe_with_meridians: **warns ~ اصنع روم باسم ~ ^warn ~ لتشغيل خاصية **
