@@ -76,27 +76,31 @@ if (message.content === "^help") {
    message.channel.send('**تم ارسالك في الخاص** :mailbox_with_mail: ');
 const embed = new Discord.RichEmbed()
     .setDescription(`
-           :fire:**~~((WolfTeam Bot ℘))~~**:fire:
  **[❖═══════ مميزات البوت :robot:  ═══════❖]**
 **يعمل 24 ساعه بدون توقف الا في حالة صيانه**
-** وسرعة البوت سريعه جدا GMZN Host علي خادم**
+** وسرعة البوت سريعه جدا WolfTeam Bot ℘ علي خادم**
 **البوت فيه اكواد حمايه من اي تهكير**
 **يعني سيرفرك البوت هيكونو في امان**
 **ابوت فيه كود مانع لنشر الروابط:robot:**
    [❖═══════ اوامر اداريه ═══════❖]
 :arrow_right: ** ^uchat ~ ل فك تقفيل الشات**
 :arrow_right: ** ^cchat ~ ل تقفيل الشات**
-:arrow_right: ** ^umute ~ لفك الميوت الكتابي**
-:arrow_right: ** ^mute ~ لعمل ميوت كتابي لحد**
+:arrow_right: ** ^umute ~ ل فك الميوت الكتابي**
+:arrow_right: ** ^mute ~ ل عمل ميوت كتابي لحد**
 :arrow_right: ** ^ban ~ ل تبنيد احد من السيرفر**
 :arrow_right: ** ^kick ~ ل طرد احد من السيرفر**
 :arrow_right: ** ^role ~ ل اعطاء احد رتبه**
-:arrow_right: ** ^ccolors ~ لانشاء 200 لون **
-:arrow_right: ** ^clear ~ ل مسح الرسائل **
-:arrow_right: ** ^warn ~ لاعطاء تحذير لاحد **   
+:arrow_right: ** ^ccolors ~ ل انشاء 200 لون **
+:arrow_right: ** ^clear ~ل مسح الرسائل **
+:arrow_right: ** ^warn ~ ل اعطاء تحذير لاحد **   
 :arrow_right: ** ^send ~ ل عمل تصويت ب روم محدد**
 :arrow_right: ** ^bc ~ ل ارسال رساله لاعضاء السيرفر**
 :arrow_right: ** ^nbc ~ ل ارسال رساله لاعضاء السيرفر كلام فقد **
+:arrow_right: ** ^ct ~ ل انشاء روم كتابي **
+:arrow_right: ** ^cv ~ ل انشاء روم صوتي ** 
+:arrow_right: ** ^hchannel ~ ل اخفاء جميع رومات السيرفر **
+:arrow_right: ** ^schannel ~ ل اظهار جميع رومات السيرفر 
+
    [❖═══════ اوامر عامه ═══════❖]
 :arrow_right: ** ^time ~ لعرض لك توقيت مصر والامارت **
 :arrow_right: ** ^bans ~ لمعرفت عدد الاشخاص المتبندين **
@@ -104,6 +108,7 @@ const embed = new Discord.RichEmbed()
 :arrow_right: ** ^avatar ~ ل عرض صورتك **
 :arrow_right: ** ^ping ~ لمعرفت سرعة البوت **
 :arrow_right: ** ^ticket ~ لعمل روم مساعده او استفسار مبينك انت والادمنيه**
+:arrow_right: ** ^invites ~ لعرض لك  عدد الاشخاص الذي قمت بدعوتهم للسيرفر **
 :arrow_right: ** ^server ~ يعرض لك معلومات عن السيرفر **
 :arrow_right: ** ^bot ~ يعرض لك معلومات عن البوت ** 
    [❖═══════ معلومات ═══════❖
@@ -1283,5 +1288,81 @@ channel.guild.owner.send(`<@!${channelremover.id}>
  channelr[channelremover.id].deleted = 0;
   },Otime)
   });
+
+client.on("message", (message) => {
+if (message.content.startsWith("^ct")) {
+            if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
+        let args = message.content.split(" ").slice(1);
+    message.guild.createChannel(args.join(' '), 'text');
+message.channel.sendMessage('تـم إنـشاء روم كـتابـي')
+
+}
+});
+
+client.on("message", (message) => {
+if (message.content.startsWith("^cv")) {
+            if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
+        let args = message.content.split(" ").slice(1);
+    message.guild.createChannel(args.join(' '), 'voice');
+    message.channel.sendMessage('تـم إنـشاء روم صـوتي')
+    
+}
+});
+
+client.on("message", async message => {
+            if(!message.channel.guild) return;
+            var prefix = "^";
+        if(message.content.startsWith(prefix + 'invites')) {
+        var nul = 0
+        var guild = message.guild
+        await guild.fetchInvites()
+            .then(invites => {
+             invites.forEach(invite => {
+                if (invite.inviter === message.author) {
+                     nul+=invite.uses
+                    }
+                });
+            });
+          if (nul > 0) {
+              console.log(`\n${message.author.tag} has ${nul} invites in ${guild.name}\n`)
+              var embed = new Discord.RichEmbed()
+                  .setColor("#000000")
+                    .addField(`${message.author.username}`, `لقد قمت بدعوة **${nul}** شخص`)
+                          message.channel.send({ embed: embed });
+                      return;
+                    } else {
+                       var embed = new Discord.RichEmbed()
+                        .setColor("#000000")
+                        .addField(`${message.author.username}`, `لم تقم بدعوة أي شخص لهذة السيرفر`)
+
+                       message.channel.send({ embed: embed });
+                        return;
+                    }
+        }
+
+client.on('message', message => {
+var prefix = "^";
+      if(message.content === prefix + "hchannel") {
+      if(!message.channel.guild) return;
+      if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('You Dont Have Perms ❌');
+             message.channel.overwritePermissions(message.guild.id, {
+             READ_MESSAGES: false
+ })
+              message.channel.send('Channel Hided Successfully ! ✅  ')
+ }
+});
+
+client.on('message', message => {
+var prefix = "^";
+      if(message.content === prefix + "schannel") {
+      if(!message.channel.guild) return;
+      if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('❌');
+             message.channel.overwritePermissions(message.guild.id, {
+             READ_MESSAGES: true
+ })
+              message.channel.send('Done  ')
+ }
+});
+
 
 client.login(process.env.BOT_TOKEN);
