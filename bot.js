@@ -113,10 +113,8 @@ const embed = new Discord.RichEmbed()
 :globe_with_meridians: **welcome ~ لتشغيل خاصية الترحيب اصنع روم باسم**
 :globe_with_meridians: **byby ~ لتشغيل خاصية المغادرة اصنع روم باسم **
 :globe_with_meridians: **warns ~ اصنع روم باسم ~ ^warn ~ لتشغيل خاصية **
-:globe_with_meridians: ** تمت اضافت منع الروابط و روابط السيرفرات :wink:**
 :globe_with_meridians: ** log لتشغيل الحمياة ضد هاكر اصنع روم لاسم :wink:**
 :globe_with_meridians: **اكتب اسم اي دولة يطلعلك العلم بتاعة:wink:  **
-:globe_with_meridians: **:hammer_pick: بوت مزال تحت تطوير  :tools: **
 `)
  message.author.sendEmbed(embed)
  
