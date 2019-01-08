@@ -101,6 +101,8 @@ const embed = new Discord.RichEmbed()
 :arrow_right: ** ^ticket ~ لعمل روم مساعده او استفسار مبينك انت والادمنيه**
 :arrow_right: ** ^server ~ يعرض لك معلومات عن السيرفر **
 :arrow_right: ** ^bot ~ يعرض لك معلومات عن البوت ** 
+   [❖═══════ اوامر الالعاب ═══════❖]
+:arrow_right: ** ^3omre ~  يتوقع عمرك قد اي ** 
    [❖═══════ معلومات ═══════❖]
 :globe_with_meridians: **welcome ~ لتشغيل خاصية الترحيب اصنع روم باسم**
 :globe_with_meridians: **byby ~ لتشغيل خاصية المغادرة اصنع روم باسم **
@@ -1306,6 +1308,20 @@ var prefix = "^";
  })
               message.channel.send('Done  ')
  }
+});
+
+const ages = [  '1',  '2',  '3',  '4',  '5',  '6',  '7',  '8',  '9',  '10',  '11',  '12',  '13',  '14',  '15',  '16',  '17',  '18',  '19',  '20',  '21',  '22',  '23',  '24',  '25',  '26',  '27',  '28',  '29',  '30',  '31',  '32']
+
+client.on('message', message => {
+  if (message.content.startsWith("^3omre")) {
+               if(!message.channel.guild) return message.reply('** This command only for servers**');
+ var embed = new Discord.RichEmbed()
+ .setColor('RANDOM')
+  .setThumbnail(message.author.avatarURL)
+.addField('اتوقع عمرك',`${ages[Math.floor(Math.random() * ages.length)]}`)
+ message.channel.sendEmbed(embed);
+ console.log('[id] Send By: ' + message.author.username)
+   }
 });
 
 
