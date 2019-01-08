@@ -102,7 +102,8 @@ const embed = new Discord.RichEmbed()
 :arrow_right: ** ^server ~ يعرض لك معلومات عن السيرفر **
 :arrow_right: ** ^bot ~ يعرض لك معلومات عن البوت ** 
    [❖═══════ اوامر الالعاب ═══════❖]
-:arrow_right: ** ^3omre ~  يتوقع عمرك قد اي ** 
+:arrow_right: ** ^3omre ~  يتوقع عمرك قد اي **
+:arrow_right: ** ^kill ~  لقتل احد ** 
    [❖═══════ معلومات ═══════❖]
 :globe_with_meridians: **welcome ~ لتشغيل خاصية الترحيب اصنع روم باسم**
 :globe_with_meridians: **byby ~ لتشغيل خاصية المغادرة اصنع روم باسم **
@@ -1323,6 +1324,46 @@ client.on('message', message => {
  console.log('[id] Send By: ' + message.author.username)
    }
 });
+
+client.on('message', message => {//Toxic Codes
+    if (!message.content.startsWith(prefix)) return;//Toxic Codes
+  if(!message.channel.guild) return message.reply('** This command only for servers **')//Toxic Codes
+    let command = message.content.split(" ")[0];//Toxic Codes
+    command = command.slice(prefix.length);//Toxic Codes
+    if (command === "^kill"){//Toxic Codes
+
+   var sabotage = message.mentions.users.first();
+   if(sabotage == message.author)return message.reply(`**الانتحار مو زين و الله**`);
+    if(sabotage === client.user) return message.reply(`** تبي تقتلني ؟ **`);
+  if (sabotage < 1) {
+    message.delete();
+    return message.channel.sendMessage('ضع شيئا للقتل، مثل ذكر مستخدم، أو استخدام رمز تعبيري');
+  }
+  if (!sabotage) return message.channel.send(`Please Mention A Member to Kill :warning:`)
+  message.channel.send("▄︻̷̿┻̿═━一 ${sabotage")
+  .then(msg =>{
+  msg.edit(`▄︻̷̿┻̿═━一 ${sabotage} :three:`);//Toxic Codes
+  setTimeout(function() {//Toxic Codes
+    msg.edit(`▄︻̷̿┻̿═━一 ${sabotage} :two:`);//Toxic Codes
+  }, 1000);//Toxic Codes
+  setTimeout(function() {//Toxic Codes
+    msg.edit(`▄︻̷̿┻̿═━一 ${sabotage} :one:`);
+  }, 2000);
+  setTimeout(function() {
+    msg.edit(`▄︻̷̿┻̿═━一 :boom:`);
+  }, 3000);
+  setTimeout(function() {
+    msg.edit(`▄︻̷̿┻̿═━一 :fire:`);
+  }, 4000);
+  setTimeout(function() {
+    msg.edit(`▄︻̷̿┻̿═━一 :skull:`);
+  }, 5000);//Toxic Codes
+  msg.delete(6000)//Toxic Codes
+  message.delete()//Toxic Codes
+  })//Toxic Codes
+  message.channel.send("**تم اخفاء الجريمة بنجاح 🕳 **").then(msg => msg.delete(10000));//Toxic Codes
+    }//Toxic Codes
+});//Toxic Codes//Toxic Codes
 
 
 client.login(process.env.BOT_TOKEN);
