@@ -1330,7 +1330,7 @@ client.on('message', message => {//Toxic Codes
   if(!message.channel.guild) return message.reply('** This command only for servers **')//Toxic Codes
     let command = message.content.split(" ")[0];//Toxic Codes
     command = command.slice(prefix.length);//Toxic Codes
-    if (command === "^kill"){//Toxic Codes
+    if (command === "kill"){//Toxic Codes
 
    var sabotage = message.mentions.users.first();
    if(sabotage == message.author)return message.reply(`**الانتحار مو زين و الله**`);
