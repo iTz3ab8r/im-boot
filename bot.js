@@ -92,13 +92,16 @@ const embed = new Discord.RichEmbed()
 :arrow_right: ** ^cv ~ ل انشاء روم صوتي ** 
 :arrow_right: ** ^hchannel ~ ل اخفاء جميع رومات السيرفر **
 :arrow_right: ** ^schannel ~ ل اظهار جميع رومات السيرفر **
+:arrow_right: ** ^move ~ ل صحب شخص الي روم الانتا في  **
    [❖═══════ اوامر عامه ═══════❖]
 :arrow_right: ** ^time ~ لعرض لك توقيت مصر والامارت **
+:arrow_right: ** ^image ~ لعرض لك صورة السيرفر **
 :arrow_right: ** ^bans ~ لمعرفت عدد الاشخاص المتبندين **
 :arrow_right: ** ^id ~ لعرض معلومات حسابك **
 :arrow_right: ** ^avatar ~ ل عرض صورتك **
 :arrow_right: ** ^ping ~ لمعرفت سرعة البوت **
 :arrow_right: ** ^ticket ~ لعمل روم مساعده او استفسار مبينك انت والادمنيه**
+:arrow_right: ** ^skin ~ يعرض لك اسكنك في ماين كرفت **
 :arrow_right: ** ^server ~ يعرض لك معلومات عن السيرفر **
 :arrow_right: ** ^bot ~ يعرض لك معلومات عن البوت ** 
    [❖═══════ اوامر الالعاب ═══════❖]
@@ -1364,6 +1367,62 @@ client.on('message', message => {//Toxic Codes
   message.channel.send("**تم اخفاء الجريمة بنجاح 🕳 **").then(msg => msg.delete(10000));//Toxic Codes
     }//Toxic Codes
 });//Toxic Codes//Toxic Codes
+
+client.on('message', message => {
+    var prefix = "^";
+if(!message.channel.guild) return;
+if(message.content.startsWith(prefix + 'move')) {
+ if (message.member.hasPermission("MOVE_MEMBERS")) {
+ if (message.mentions.users.size === 0) {
+ return message.channel.send("``لاستخدام الأمر اكتب هذه الأمر : " +prefix+ "move [USER]``")
+}
+if (message.member.voiceChannel != null) {
+ if (message.mentions.members.first().voiceChannel != null) {
+ var authorchannel = message.member.voiceChannelID;
+ var usermentioned = message.mentions.members.first().id;
+var embed = new Discord.RichEmbed()
+ .setTitle("Succes!")
+ .setColor("#000000")
+ .setDescription(`لقد قمت بسحب <@${usermentioned}> الى الروم الصوتي الخاص بك✅ `)
+var embed = new Discord.RichEmbed()
+.setTitle(`You are Moved in ${message.guild.name}`)
+ .setColor("RANDOM")
+.setDescription(`**<@${message.author.id}> Moved You To His Channel!\nServer --> ${message.guild.name}**`)
+ message.guild.members.get(usermentioned).setVoiceChannel(authorchannel).then(m => message.channel.send(embed))
+message.guild.members.get(usermentioned).send(embed)
+} else {
+message.channel.send("``لا تستطيع سحب "+ message.mentions.members.first() +" `يجب ان يكون هذه العضو في روم صوتي`")
+}
+} else {
+ message.channel.send("**``يجب ان تكون في روم صوتي لكي تقوم بسحب العضو أليك``**")
+}
+} else {
+message.react("❌")
+ }}});
+
+client.on("message", message => {
+    var prefix = "^"
+    if (!message.content.startsWith(prefix)) return;
+      let command = message.content.split(" ")[0];
+      command = command.slice(prefix.length);
+        if(command === "skin") {
+                const args = message.content.split(" ").slice(1).join(" ")
+        if (!args) return message.channel.send("** Type your skin name **");
+        const image = new Discord.Attachment(`https://visage.surgeplay.com/full/256/${args}`, "skin.png");
+    message.channel.send(image)
+        }
+    });
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + "image")) {
+    var embed = new Discord.RichEmbed()
+    .setTitle("صورة السيرفر")  
+    .setColor("RANDOM")
+    .setImage(message.guild.iconURL)
+    message.channel.sendEmbed(embed);
+  }
+});
+
 
 
 client.login(process.env.BOT_TOKEN);
