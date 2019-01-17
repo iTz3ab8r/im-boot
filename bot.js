@@ -73,7 +73,7 @@ const embed = new Discord.RichEmbed()
 **يعمل 24 ساعه بدون توقف الا في حالة صيانه**
 ** وسرعة البوت سريعه جدا WolfTeam Bot ℘ علي خادم**
 **البوت فيه اكواد حمايه من اي تهكير**
-**يعني سيرفرك البوت هيكونو في امان**
+**يعني سيرفر هيكونو في امان**
    [❖═══════ اوامر اداريه ═══════❖]
 :arrow_right: ** ^uchat ~ ل فك تقفيل الشات**
 :arrow_right: ** ^cchat ~ ل تقفيل الشات**
@@ -87,6 +87,7 @@ const embed = new Discord.RichEmbed()
 :arrow_right: ** ^warn ~ ل اعطاء تحذير لاحد **   
 :arrow_right: ** ^send ~ ل عمل تصويت ب روم محدد**
 :arrow_right: ** ^bc ~ ل ارسال رساله لاعضاء السيرفر**
+   [❖═══════ اوامر سيرفر  ═══════❖]
 :arrow_right: ** ^ct ~ ل انشاء روم كتابي **
 :arrow_right: ** ^cv ~ ل انشاء روم صوتي ** 
 :arrow_right: ** ^hchannel ~ ل اخفاء جميع رومات السيرفر **
@@ -1104,7 +1105,7 @@ client.on('message', message => {
       const embed = new Discord.RichEmbed()
       .setColor('RANDOM')
       .setAuthor(member.user.tag, member.user.avatarURL)
-.setDescription('*** :heart:  ولكم نورت السيرفر ياشبحح نتمني لك الاستمتاع في السيرفر***')
+.setDescription('** :heart:  ولكم نورت السيرفر ياشبحح نتمني لك الاستمتاع في السيرفر**')
 .setThumbnail(member.avatarURL)
 .setImage('https://cdn.discordapp.com/attachments/503693641878077475/504221403017510912/download.jpg')
       if (!channel) return;
@@ -1168,7 +1169,7 @@ client.on('message', message => {
             .addField('**Channels**📝 :' , `[ ${client.channels.size} ]` , true)
             .addField('**Users**🔮 :' ,`[ ${client.users.size} ]` , true)
             .addField('**Bot Name**🔰 :' , `[ ${client.user.tag} ]` , true)
-            .addField('**Bot Owner**👑 :' , `[<@516576049778130954>]` , true)
+            .addField('**Bot Owner**👑 :' , `[<@534808591731785779>]` , true)
             .setFooter(message.author.username, message.author.avatarURL)
     })
 }
