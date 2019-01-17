@@ -69,7 +69,7 @@ if (message.content === "^help") {
    message.channel.send('**تم ارسالك في الخاص** :mailbox_with_mail: ');
 const embed = new Discord.RichEmbed()
     .setDescription(`
-   [❖════ مميزات البوت :robot═══❖]
+   [❖════ مميزات البوت :robot: ═══❖]
 **يعمل 24 ساعه بدون توقف الا في حالة صيانه**
 ** وسرعة البوت سريعه جدا WolfTeam Bot ℘ علي خادم**
 **البوت فيه اكواد حمايه من اي تهكير**
@@ -101,11 +101,6 @@ const embed = new Discord.RichEmbed()
    [❖═══════ اوامر الالعاب ═══════❖]
 :arrow_right: ** ^3omre ~  يتوقع عمرك قد اي **
 :arrow_right: ** ^kill ~  لقتل احد ** 
-   [❖═══════ معلومات ═══════❖]
-:globe_with_meridians: **welcome ~ لتشغيل خاصية الترحيب والمغادرةاصنع روم باسم**
-:globe_with_meridians: **warns ~ اصنع روم باسم ~ ^warn ~ لتشغيل خاصية **
-:globe_with_meridians: ** log لتشغيل الحمياة ضد هاكر اصنع روم لاسم :wink:**
-:globe_with_meridians: **اكتب اسم اي دولة يطلعلك العلم بتاعة:wink:  **
 `)
  message.author.sendEmbed(embed)
  
