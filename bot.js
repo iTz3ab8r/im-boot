@@ -87,12 +87,6 @@ const embed = new Discord.RichEmbed()
 :arrow_right: ** ^warn ~ ل اعطاء تحذير لاحد **   
 :arrow_right: ** ^send ~ ل عمل تصويت ب روم محدد**
 :arrow_right: ** ^bc ~ ل ارسال رساله لاعضاء السيرفر**
-   [❖═══════ اوامر سيرفر  ═══════❖]
-:arrow_right: ** ^ct ~ ل انشاء روم كتابي **
-:arrow_right: ** ^cv ~ ل انشاء روم صوتي ** 
-:arrow_right: ** ^hchannel ~ ل اخفاء جميع رومات السيرفر **
-:arrow_right: ** ^schannel ~ ل اظهار جميع رومات السيرفر **
-:arrow_right: ** ^move ~ ل صحب شخص الي روم الانتا في  **
    [❖═══════ اوامر عامه ═══════❖]
 :arrow_right: ** ^time ~ لعرض لك توقيت مصر والامارت **
 :arrow_right: ** ^image ~ لعرض لك صورة السيرفر **
@@ -1421,6 +1415,28 @@ client.on('message', message => {
     message.channel.sendEmbed(embed);
   }
 });
+client.on("message", message => {
+  var prefix = "*";
+if (message.content === "^help") {
+   message.channel.send('*اذا كان الخاص مقفل لا يمكن بعت الاوامر*');
+const embed = new Discord.RichEmbed()
+    .setDescription(`
+   [❖═══════ اوامر سيرفر  ═══════❖]
+:arrow_right: ** ^ct ~ ل انشاء روم كتابي **
+:arrow_right: ** ^cv ~ ل انشاء روم صوتي ** 
+:arrow_right: ** ^hchannel ~ ل اخفاء جميع رومات السيرفر **
+:arrow_right: ** ^schannel ~ ل اظهار جميع رومات السيرفر **
+:arrow_right: ** ^move ~ ل صحب شخص الي روم الانتا في  **
+   [❖═══════ معلومات ═══════❖]
+:globe_with_meridians: **welcome ~ لتشغيل خاصية الترحيب والمغادرةاصنع روم باسم**
+:globe_with_meridians: **warns ~ اصنع روم باسم ~ ^warn ~ لتشغيل خاصية **
+:globe_with_meridians: ** log لتشغيل الحمياة ضد هاكر اصنع روم لاسم :wink:**
+:globe_with_meridians: **اكتب اسم اي دولة يطلعلك العلم بتاعة:wink:  **
+`)
+ message.author.sendEmbed(embed)
+ 
+ }
+ });
 
 
 
