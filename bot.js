@@ -34,7 +34,7 @@ client.on('ready', () => {
 });
 
 client.on('ready', () => {
-  client.user.setGame(`!~[ Čømmäñđš l ^help ]~! .`,'https://www.twitch.tv/v5bz');
+  client.user.setGame(`!~[ Čømmäñđš l ^help ]~!`,'https://www.twitch.tv/v5bz');
   console.log('---------------');
   console.log(' Bot Is Online')
   console.log('---------------')
@@ -54,8 +54,7 @@ client.on('message' , message => {
  .setDescription("Add me" + `
  **
 رابط البوت |
-https://discordapp.com/api/oauth2/authorize?client_id=530836353605435413&permissions=0&scope=bot
- **
+https://discordapp.com/oauth2/authorize?client_id=536156379854143488&permissions=0&scope=bot **
 `);
   message.author.sendEmbed(embed);
    }
