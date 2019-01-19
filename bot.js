@@ -1432,6 +1432,35 @@ const embed = new Discord.RichEmbed()
  
  }
  });
+ client.on("guildMemberAdd", function(member) {
+  const channel = member.guild.channels.find("name", "℘「chat")
+      const embed = new Discord.RichEmbed()
+      .setColor('RANDOM')
+      .setAuthor(member.user.tag, member.user.avatarURL)
+.setDescription('** :heart:  ولكم نورت السيرفر ياشبحح نتمني لك الاستمتاع في السيرفر**')
+.setThumbnail(member.avatarURL)
+.setImage('https://cdn.discordapp.com/attachments/503693641878077475/504221403017510912/download.jpg')
+      if (!channel) return;
+      channel.sendEmbed(embed);
+});
+client.on('guildMemberRemove', Sal => { //By Salto7#4595
+  var embed = new Discord.RichEmbed()
+  .setAuthor(Sal.user.username, Sal.user.avatarURL)
+  .setThumbnail(Sal.user.avatarURL)
+  .setImage('https://cdn.discordapp.com/attachments/505491202871787521/509701858571321350/download.jpg') //هنا حط الصوره الي تبيها
+  .setTitle('خرج عضو')
+  .setDescription('الله معك مع السلامه')
+  .addField('``ايدي العضو``:',"" +  Sal.user.id, true)
+  .addField('``تاق العضو``', Sal.user.discriminator, true)
+  .addField('``تم الانشاء في``', Sal.user.createdAt, true)
+  .addField(' ?? الان ',`**[ ${Sal.guild.memberCount} ]**`,true)
+  .setColor('RED')
+  .setFooter(Sal.guild.name, Sal.guild.iconURL, true)
+  var channel =Sal.guild.channels.find('name', '℘「chat') // هنا حط اسم الروم الي تبيه يكتب فيه
+  if (!channel) return;
+  channel.send({embed : embed});
+  });
+
 
 
 
