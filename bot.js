@@ -1494,7 +1494,7 @@ if (message.content.startsWith(adminprefix + 'st')) {
 }
 
 });
-//////
+const prefix = "^";
 ///////////////
 //////////////////
 client.on('message', async msg => { 
