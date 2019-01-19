@@ -54,7 +54,7 @@ client.on('message' , message => {
  .setDescription("Add me" + `
  **
 رابط البوت |
-https://discordapp.com/oauth2/authorize?client_id=536156379854143488&permissions=0&scope=bot **
+https://discordapp.com/api/oauth2/authorize?client_id=536156379854143488&permissions=8&scope=bot **
 `);
   message.author.sendEmbed(embed);
    }
@@ -812,7 +812,7 @@ client.on('typingStart', (ch, user) => {
 
 client.on('message', msg => {
   if (msg.content === '^suppport') {
-    msg.reply('السيرفر للمساعده,https://discord.gg/vNxxzv');
+    msg.reply('السيرفر للمساعده,https://discord.gg/NwX2bJF');
   }
 });
 
@@ -1421,6 +1421,9 @@ const embed = new Discord.RichEmbed()
 :arrow_right: ** ^hchannel ~ ل اخفاء جميع رومات السيرفر **
 :arrow_right: ** ^schannel ~ ل اظهار جميع رومات السيرفر **
 :arrow_right: ** ^move ~ ل صحب شخص الي روم الانتا في  **
+[❖═══════ اوامر اخري═══════❖]
+:arrow_right: ** ^inv ~ لارسال رابط دعوه البوت **
+:arrow_right: ** ^suppport ~ لارسال رابط سيرفر خادم بوت **
    [❖═══════ معلومات ═══════❖]
 :globe_with_meridians: **welcome ~ لتشغيل خاصية الترحيب والمغادرةاصنع روم باسم**
 :globe_with_meridians: **warns ~ اصنع روم باسم ~ ^warn ~ لتشغيل خاصية **
