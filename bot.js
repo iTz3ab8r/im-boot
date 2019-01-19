@@ -70,7 +70,7 @@ const embed = new Discord.RichEmbed()
     .setDescription(`
    [❖════ مميزات البوت :robot: ═══❖]
 **يعمل 24 ساعه بدون توقف الا في حالة صيانه**
-** وسرعة البوت سريعه جدا WolfTeam Bot ℘ علي خادم**
+** وسرعة البوت سريعه جدا  KillerGamez علي خادم**
 **البوت فيه اكواد حمايه من اي تهكير**
 **يعني سيرفر هيكونو في امان**
    [❖═══════ اوامر اداريه ═══════❖]
@@ -621,7 +621,7 @@ client.on('message', message => {
     if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
   if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
     let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
-    let copy = "WolfTeam Bot ℘";
+    let copy = "KilleŕGámèź•SyStem ℘";
     let request = `Requested By ${message.author.username}`;
     if (!args) return message.reply('**يجب عليك كتابة كلمة او جملة لإرسال البرودكاست**');message.channel.send(`**هل أنت متأكد من إرسالك البرودكاست؟ \nمحتوى البرودكاست:** \` ${args}\``).then(msg => {
     msg.react('✅')
@@ -797,7 +797,7 @@ client.on('typingStart', (ch, user) => {
   .setThumbnail(message.author.avatarURL)  
   .setAuthor(message.author.username)
 .setDescription("معلومات عن الحــساب")
-               .setFooter(`WolfTeam Bot ∾.`, '')
+               .setFooter(`KilleŕGámèź•SyStem ℘`, '')
   .setColor("#9B59B6")
   .addField("اســـم الحســاب", `${message.author.username}`)
   .addField('كود الحساب الخاص', message.author.discriminator)
@@ -812,7 +812,7 @@ client.on('typingStart', (ch, user) => {
 
 client.on('message', msg => {
   if (msg.content === '^suppport') {
-    msg.reply('السيرفر للمساعده,https://discord.gg/7z5c23T');
+    msg.reply('السيرفر للمساعده,https://discord.gg/vNxxzv');
   }
 });
 
@@ -1110,7 +1110,7 @@ client.on('message', message => {
 });
 
 client.on('guildMemberAdd', member=> {
-    member.addRole(member.guild.roles.find("name","Members"));
+    member.addRole(member.guild.roles.find("name","💻MÈMBÈŘŚ🎮"));
     });
 
 client.on("message", message => {
@@ -1128,7 +1128,7 @@ client.on("message", message => {
         color: 0x06DF00,
         description: "تم مسح الرسائل بنجاح",
         footer: {
-          text: "WolfTeam Bot ℘."
+          text: "KilleŕGámèź•SyStem ℘"
         }
       }}).then(msg => {msg.delete(3000)});
                           }
@@ -1139,7 +1139,7 @@ client.on("message", message => {
 client.on("message", message => {
 var prefix = "^";
         if(message.content.startsWith(prefix + "say")) {
-    if(message.author.id !== "516576049778130954") return message.reply("هذا الامر لصحاب البوت فقط");
+    if(message.author.id !== "534808591731785779") return message.reply("هذا الامر لصحاب البوت فقط");
         let args = message.content.split(" ").slice(1);
 message.channel.send(args)
         }
