@@ -1110,7 +1110,7 @@ client.on('message', message => {
 });
 
 client.on('guildMemberAdd', member=> {
-    member.addRole(member.guild.roles.find("name","💻MÈMBÈŘŚ🎮"));
+    member.addRole(member.guild.roles.find("name","KiLLerGamez 🎮"));
     });
 
 client.on("message", message => {
